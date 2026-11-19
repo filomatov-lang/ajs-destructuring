@@ -1,3 +1,12 @@
-export default function init() {
-  console.log('App is running');
+export default function destructuring({ special = [] } = {}) {
+  return special.map(
+    ({
+      id, name, icon, description = 'Описание недоступно',
+    }) => ({
+      id,
+      name,
+      icon,
+      description,
+    }),
+  );
 }
